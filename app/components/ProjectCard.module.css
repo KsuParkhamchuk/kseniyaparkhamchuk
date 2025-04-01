@@ -1,0 +1,85 @@
+.projectCard {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    height: 180px; /* Fixed height for consistent layout */
+}
+
+.projectCard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    background-color: #F1DDB51A; /* Matching the resume button hover color */
+}
+
+.projectCardContent {
+    flex: 1;
+}
+
+.projectTitle {
+    font-size: 1em;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 700;
+}
+
+.projectDesc {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.projectLinks {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    font-size: 0.8em;
+    position: absolute;
+    bottom: 1.5rem;
+    left: 0;
+    padding: 0 1.5rem;
+}
+
+.projectLink {
+    color: #0078d7;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    padding: 2px 0;
+}
+
+.projectLink:hover {
+    color: #005fa3;
+}
+
+.githubLink {
+    background: linear-gradient(90deg, #5EEDF5, #ED7FBD);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.githubLink:hover {
+    opacity: 0.8;
+    color: transparent;
+}
+
+@media (max-width: 600px) {
+    .projectCard {
+        padding: 1.2rem;
+        height: 160px; /* Slightly shorter on mobile */
+    }
+    
+    .projectLinks {
+        bottom: 1.2rem;
+        padding: 0 1.2rem;
+    }
+    
+    .projectLinks::before {
+        left: 1.2rem;
+        right: 1.2rem;
+    }
+} 
