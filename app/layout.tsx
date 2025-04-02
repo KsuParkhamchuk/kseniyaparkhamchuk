@@ -3,6 +3,7 @@ import "./globals.css";
 import Image from "next/image";
 import Link from "next/link";
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/react"
 
 export const metadata: Metadata = {
   title: "Kseniya Parkhamchuk",
@@ -41,6 +42,7 @@ export default function RootLayout({
           {children}
         </div>
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
