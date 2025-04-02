@@ -51,17 +51,15 @@ export default function WhoAmIPage() {
             
             <div className="projects-grid">
                 <ProjectCard 
-                    title="Gemma3-sft"
-                    description="in attempts of building custom dataset"
-                    githubUrl="https://github.com/KsuParkhamchuk/gemma3-sft"
-                />
-                
-                <ProjectCard 
                     title="GPT-2"
                     description="with custom layers implementation"
                     githubUrl="https://github.com/KsuParkhamchuk/gpt-2"
                 />
-                
+                <ProjectCard 
+                    title="Gemma3-sft"
+                    description="in attempts of building custom dataset"
+                    githubUrl="https://github.com/KsuParkhamchuk/gemma3-sft"
+                />
                 <ProjectCard 
                     title="Vibe-maps"
                     description="check what models are capable of"

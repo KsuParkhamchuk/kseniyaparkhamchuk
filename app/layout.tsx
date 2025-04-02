@@ -2,9 +2,14 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Image from "next/image";
 import Link from "next/link";
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 export const metadata: Metadata = {
   title: "Kseniya Parkhamchuk",
   description: "Personal website for Kseniya Parkhamchuk",
+  icons: {
+    icon: "/icons/fox.png",
+  },
 };
 
 export default function RootLayout({
@@ -35,6 +40,7 @@ export default function RootLayout({
       </header>
           {children}
         </div>
+        <SpeedInsights />
       </body>
     </html>
   );
