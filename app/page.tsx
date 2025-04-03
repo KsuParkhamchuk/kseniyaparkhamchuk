@@ -8,7 +8,7 @@ export default function HomePage() {
         <div className="button-grid">
           <Link href="/whoami" className="grid-button">
             <Image 
-              src="/meow.jpeg" 
+              src="/cat.png" 
               alt="Icon for Who am I section" 
               width={800}
               height={600}
@@ -16,9 +16,9 @@ export default function HomePage() {
             <span className="button-label">Who am I?</span>
           </Link>
 
-          <Link href="/notebook" className="grid-button">
+          <Link href="/notebook" className="grid-button notebook-btn">
             <Image 
-              src="/books.jpeg" 
+              src="/learn.png" 
               alt="Icon for ML Notebook section" 
               width={800}
               height={600}
@@ -26,9 +26,9 @@ export default function HomePage() {
             <span className="button-label">ML Notebook</span>
           </Link>
 
-          <Link href="/favourites" className="grid-button">
+          <Link href="/favourites" className="grid-button favourites-btn">
             <Image 
-              src="/like.jpeg" 
+              src="/favourite.png" 
               alt="Icon for What I like section" 
               width={800}
               height={600}
@@ -36,9 +36,9 @@ export default function HomePage() {
             <span className="button-label">What I like</span>
           </Link>
 
-          <Link href="/thoughts" className="grid-button">
+          <Link href="/thoughts" className="grid-button thoughts-btn">
             <Image 
-              src="/question.jpeg" 
+              src="/ghost.png" 
               alt="Icon for What I think section" 
               width={800}
               height={600}

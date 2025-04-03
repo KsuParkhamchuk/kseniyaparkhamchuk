@@ -1,0 +1,28 @@
+.notebookContainer {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+.notebookTitle {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.1em;
+}
+
+.notebookIntro {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+.articlesContainer {
+    display: flex;
+    flex-direction: column;
+} 
+
+.divider {
+    border-top: 1px solid #ccc;
+    margin: 2rem 0;
+}
