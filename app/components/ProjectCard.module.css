@@ -2,19 +2,18 @@
     background-color: #fff;
     padding: 1.5rem;
     border-radius: 12px;
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #bbb;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-    height: 180px; /* Fixed height for consistent layout */
+    height: 180px; 
 }
 
 .projectCard:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    background-color: #F1DDB51A; /* Matching the resume button hover color */
+    background-color: #E3F0FF; 
 }
 
 .projectCardContent {
@@ -30,7 +29,6 @@
 
 .projectDesc {
     font-size: 0.9em;
-    color: #666;
 }
 
 .projectLinks {

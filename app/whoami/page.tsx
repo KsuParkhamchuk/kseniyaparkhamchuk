@@ -18,7 +18,7 @@ export default function WhoAmIPage() {
                     />
                     <div className="profile-text">
                         <Image 
-                            src="/meow.jpeg" 
+                            src="/cat.png" 
                             alt="Cat" 
                             width={200} 
                             height={200}
