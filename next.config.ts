@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  serverRuntimeConfig: {
+    maxDuration: 20,
+  }
 };
 
 export default nextConfig;
