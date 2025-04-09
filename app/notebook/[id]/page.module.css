@@ -1,0 +1,26 @@
+.title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.part a {
+    color: #555555;
+    text-decoration: none;
+}
+
+.parts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 2rem;
+}
+
+.part {
+    padding: 1rem;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+}
+
+.content {
+    margin-top: 2rem;
+}

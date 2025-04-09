@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
+import { NoteProvider } from "./context/noteContext";
 
 export const metadata: Metadata = {
   title: "Kseniya Parkhamchuk",
@@ -23,23 +24,25 @@ export default function RootLayout({
       <body>
         <div className="container">
         <header>
-        <Link href="/" className="header-name">Kseniya Parkhamchuk</Link>
-        <div className="header-contact">
-          <div className="social-links">
-            <a href="https://x.com/KsenaParhamchuk" target="_blank" rel="noopener noreferrer">
-              <Image src="/icons/x.svg" alt="X Profile" width={24} height={24} />
-            </a>
-            <a href="https://github.com/KsuParkhamchuk" target="_blank" rel="noopener noreferrer">
-              <Image src="/icons/github.svg" alt="GitHub Profile" width={24} height={24} />
-            </a>
-            <a href="https://www.linkedin.com/in/kparkhamchuk/" target="_blank" rel="noopener noreferrer">
-              <Image src="/icons/linkedin.svg" alt="LinkedIn Profile" width={24} height={24} />
-            </a>
-          </div>
-          <div className="email-link">k.parkhamchuk@gmail.com</div>
-        </div>
-      </header>
+          <Link href="/" className="header-name">Kseniya Parkhamchuk</Link>
+          <div className="header-contact">
+              <div className="social-links">
+                <a href="https://x.com/KsenaParhamchuk" target="_blank" rel="noopener noreferrer">
+                  <Image src="/icons/x.svg" alt="X Profile" width={24} height={24} />
+                </a>
+                <a href="https://github.com/KsuParkhamchuk" target="_blank" rel="noopener noreferrer">
+                  <Image src="/icons/github.svg" alt="GitHub Profile" width={24} height={24} />
+                </a>
+                <a href="https://www.linkedin.com/in/kparkhamchuk/" target="_blank" rel="noopener noreferrer">
+                  <Image src="/icons/linkedin.svg" alt="LinkedIn Profile" width={24} height={24} />
+                </a>
+              </div>
+              <div className="email-link">k.parkhamchuk@gmail.com</div>
+            </div>
+        </header>
+        <NoteProvider>
           {children}
+        </NoteProvider>
         </div>
         <SpeedInsights />
         <Analytics />

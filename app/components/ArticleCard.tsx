@@ -6,12 +6,12 @@ import styles from './ArticleCard.module.css';
 interface ArticleCardProps {
     title: string;
     imagePath: string;
-    content: string;
+    description: string;
     id: string;
     parts?: { number: number; title: string }[];
 }
 
-const ArticleCard: React.FC<ArticleCardProps> = ({ title, imagePath, content, id, parts }) => {
+const ArticleCard: React.FC<ArticleCardProps> = ({ title, imagePath, description, id, parts }) => {
     return (
         <div className={styles.articleCard}>
             <div className={styles.articleImageContainer}>
@@ -25,12 +25,12 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ title, imagePath, content, id
             </div>
             <div className={styles.articleContent}>
                 <h2 className={styles.articleTitle}>{title}</h2>
-                <p className={styles.articleDescription}>{content}</p>
+                <p className={styles.articleDescription}>{description}</p>
                 
                 {parts && parts.length > 0 && (
                     <ul className={styles.partsList}>
-                        {parts.map((part, index) => (
-                            <li key={index} className={styles.partItem}>
+                        {parts.map((part) => (
+                            <li key={part.number} className={styles.partItem}>
                                 • Part {part.number}. {part.title}
                             </li>
                         ))}
