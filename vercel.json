@@ -1,6 +1,6 @@
 {
     "functions": {
-      "api/notebook/route.ts": {
+      "api/notebook": {
         "maxDuration": 15
       }
     }
