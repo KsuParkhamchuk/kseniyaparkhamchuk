@@ -3,7 +3,9 @@ import dbConnect from "@/db/connect";
 import Note from "@/db/model";
 
 export async function GET() {
+    console.log("Connecting to database...");
     await dbConnect();
+    console.log("Connected to database");
 
     try {
         const notes = await Note.find();
