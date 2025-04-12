@@ -111,6 +111,20 @@
     margin: 2rem auto;
 }
 
+.content :global(.circled-number) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    background: linear-gradient(90deg, #5EEDF5, #ED7FBD);
+    color: white;
+    font-weight: bold;
+    margin-right: 0.5em;
+    font-size: 0.9em;
+}
+
 .title {
     font-size: 1.5rem;
     font-weight: 600;

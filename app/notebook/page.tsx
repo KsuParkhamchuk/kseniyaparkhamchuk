@@ -23,12 +23,6 @@ import { useNote } from '../context/noteContext';
 //             { number: 2, title: 'Tokenizer types' }
 //         ]
 //     },
-//     {
-//         id: 'vibe-coding-notes',
-//         title: '"Vibe coding" notes',
-//         imagePath: '/notebook/notebook-vibe.jpg',
-//         content: 'Everyone wonders how the world is going to look like after emerging of LLMs.\nMy main goal was to check how good LLM can follow instructions, how well can make tech decisions, what are the main limitations and what is a human part in such type of coding.'
-//     }
 // ];
 
 export default function NotebookPage() {
