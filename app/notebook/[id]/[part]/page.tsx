@@ -7,7 +7,8 @@ import ReactMarkdown from "react-markdown";
 import { Part } from "../../types";
 import styles from "./page.module.css";
 import Link from "next/link";
-
+import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
 export default function NotebookPartPage() {
     const {currentNote, getNote} = useNote();
     const paramsData = useParams();
@@ -30,7 +31,7 @@ export default function NotebookPartPage() {
             <Link href={`/notebook/${currentNote?._id}`} className={`${styles.link} ${styles.back}`}>Back to &quot;{currentNote?.title}&quot;</Link>
             <h2 className={styles.title}>{part?.title}</h2>
             <div className={styles.content}>
-                <ReactMarkdown>{part?.content}</ReactMarkdown>
+                <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>{part?.content}</ReactMarkdown>
             </div>
             {nextPart && <div className={styles.next}>
                 <Link href={`/notebook/${currentNote?._id}/${nextPart?.number}`} className={`${styles.link} ${styles.next}`}>Part {nextPart?.number}: {nextPart?.title}</Link>

@@ -6,6 +6,12 @@
     margin-top: 3rem;
 }
 
+.content :global(h3) {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
 .content :global(p) {
     margin-bottom: 2rem;
     text-align: justify;
@@ -15,6 +21,30 @@
     font-weight: 600;
 }
 
+.content :global(em) {
+    font-style: italic;
+    color: #4a5568;
+    position: relative;
+    display: inline-block;
+}
+
+.content :global(ul) {
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+    list-style-type: disc;
+}
+
+.content :global(ol) {
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+    list-style-type: decimal;
+}
+
+.content :global(li) {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+    display: list-item;
+}
 
 .content :global(blockquote) {
     border-left: 4px solid #5EEDF5;
@@ -47,6 +77,38 @@
     background-color: transparent;
     padding: 0;
     color: #2d3748;
+}
+
+.content :global(table) {
+    width: 100%;
+    margin-bottom: 2rem;
+    border-collapse: collapse;
+    overflow-x: auto;
+    display: block;
+}
+
+.content :global(table th) {
+    background-color: #f8f8f8;
+    font-weight: 600;
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 2px solid #5EEDF5;
+}
+
+.content :global(table td) {
+    padding: 0.75rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.content :global(table tr:hover) {
+    background-color: #f7fafc;
+}
+
+.content :global(img) {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 2rem auto;
 }
 
 .title {
