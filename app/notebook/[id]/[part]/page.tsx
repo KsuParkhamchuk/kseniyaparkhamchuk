@@ -34,7 +34,7 @@ export default function NotebookPartPage() {
                 <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>{part?.content}</ReactMarkdown>
             </div>
             {nextPart && <div className={styles.next}>
-                <Link href={`/notebook/${currentNote?._id}/${nextPart?.number}`} className={`${styles.link} ${styles.next}`}>Part {nextPart?.number}: {nextPart?.title}</Link>
+                <Link href={`/notebook/${currentNote?._id}/${nextPart?.number}`} className={`${styles.link} ${styles.next}`}> Next chapter: {nextPart?.title}</Link>
             </div>}
         </div>
     )

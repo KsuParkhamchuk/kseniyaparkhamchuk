@@ -19,13 +19,14 @@
     padding: 1rem;
     border: 1px solid #bbb;
     border-radius: 5px;
+    text-decoration: none;
+    color: #333;
 }
 
 .content {
     margin-top: 2rem;
 }
 
-/* Content styling matching the [part] page */
 .content :global(h3) {
     font-size: 1.2rem;
     font-weight: 600;

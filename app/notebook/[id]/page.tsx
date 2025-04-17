@@ -28,9 +28,9 @@ export default function NotebookPage() {
                 <div className={styles.parts}>
                     
                     {currentNote?.parts.map((part: Part) => (
-                        <div className={styles.part} key={part.number}>
-                            <Link href={`/notebook/${currentNote._id}/${part.number}`} className={styles.partTitle}>{part.title}</Link>
-                        </div>
+                        <Link href={`/notebook/${currentNote._id}/${part.number}`} className={styles.part} key={part.number}>
+                            {part.title}
+                        </Link>
                     ))}
                 </div>
             )}
