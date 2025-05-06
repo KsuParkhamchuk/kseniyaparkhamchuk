@@ -5,25 +5,6 @@ import ArticleCard from '../components/ArticleCard';
 import styles from './page.module.css';
 import { Note } from './types';
 import { useNote } from '../context/noteContext';
-// const articles = [
-//     {
-//         id: 'shape-of-everything-inside-transformer',
-//         title: 'Shape of everything inside a transformer',
-//         imagePath: '/notebook/notebook-shape.jpg',
-//         content: 'While learning about GPT-2 architecture I constantly come across the same issue - shapes, dimensions and every further problems related to that. The purpose of this article is to go through the whole GPT model and thoroughly think of any dimension and its purpose',
-//         parts: []
-//     },
-//     {
-//         id: 'everything-about-tokenization',
-//         title: 'Everything about tokenization',
-//         imagePath: '/notebook/notebook-tokenizer.jpg',
-//         content: '',
-//         parts: [
-//             { number: 1, title: 'Beginners understanding' },
-//             { number: 2, title: 'Tokenizer types' }
-//         ]
-//     },
-// ];
 
 export default function NotebookPage() {
     const [isLoading, setIsLoading] = useState(false);

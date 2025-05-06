@@ -32,8 +32,7 @@ export default function WhoAmIPage() {
                             So now I am exploring each and every detail of machine 
                                 learning. My focus and the biggest interest is <strong>NLP</strong>, 
                                 <strong>transformers and their optimisations</strong>. I am also eager to 
-                            learn more about <strong>human-AI collaboration</strong> and possible ways 
-                            of improvement and <strong>mechanistic interpretability</strong> field.
+                            learn more about <strong>human-AI collaboration</strong>  and <strong>mechanistic interpretability</strong> field.
                         </p>
                         
                         <p className="bio-text">

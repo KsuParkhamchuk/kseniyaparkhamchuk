@@ -1,5 +1,6 @@
 .container {
     max-width: 800px;
+    margin: 0 auto;
 }
 
 .content {
@@ -80,11 +81,11 @@
 }
 
 .content :global(table) {
-    width: 100%;
     margin-bottom: 2rem;
     border-collapse: collapse;
     overflow-x: auto;
     display: block;
+    max-width: 1200px;
 }
 
 .content :global(table th) {

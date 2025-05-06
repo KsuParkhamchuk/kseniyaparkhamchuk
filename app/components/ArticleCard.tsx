@@ -13,7 +13,7 @@ interface ArticleCardProps {
 
 const ArticleCard: React.FC<ArticleCardProps> = ({ title, imagePath, description, id, parts }) => {
     return (
-        <div className={styles.articleCard}>
+        <Link href={`/notebook/${id}`} className={styles.articleCard}>
             <div className={styles.articleImageContainer}>
                 <Image 
                     src={imagePath} 
@@ -43,7 +43,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ title, imagePath, description
                     </Link>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 };
 
