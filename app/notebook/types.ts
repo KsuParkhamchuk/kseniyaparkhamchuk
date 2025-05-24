@@ -13,4 +13,5 @@ export type Note = {
     description: string;
     parts?: Part[];
     content?: string;
+    createdAt?: Date;
 }

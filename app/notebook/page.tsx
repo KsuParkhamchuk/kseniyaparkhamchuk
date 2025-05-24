@@ -43,7 +43,7 @@ export default function NotebookPage() {
             <p className={styles.notebookText}>These are the notes I took in attempts to learn something</p>
             
             <div className={styles.articlesContainer}>
-                {noteList.length ? noteList.map((note: Note) => (
+                {noteList.length ? noteList.reverse().map((note: Note) => (
                     <>
                         <ArticleCard 
                             key={note._id.toString()}
@@ -52,6 +52,7 @@ export default function NotebookPage() {
                             imagePath={note.imagePath}
                             description={note.description}
                             parts={note.parts}
+                            createdAt={note.createdAt}
                         />
                         <div className={styles.divider}></div>
                     </>

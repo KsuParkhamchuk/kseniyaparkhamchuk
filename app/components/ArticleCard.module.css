@@ -19,6 +19,8 @@
 .articleContent {
     flex: 1;
     margin-left: 1rem;
+    display: flex;
+    justify-content: space-between;
 }
 
 .articleTitle {
@@ -47,23 +49,15 @@
     color: #555;
 }
 
-.readMoreContainer {
-    text-align: right;
-}
-
-.readMoreLink {
-    background: linear-gradient(90deg, #5EEDF5, #ED7FBD);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: opacity 0.2s ease;
-}
-
-.readMoreLink:hover {
-    opacity: 0.8;
-    color: transparent;
+.createdAtContainer {
+    padding: 0.5rem 1rem;
+    background-color: #FFF2E3;
+    color: #333;
+    width: fit-content;
+    min-width: 120px;
+    text-align: center;
+    height: fit-content;
+    margin-top: auto;
 }
 
 @media (max-width: 768px) {

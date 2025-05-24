@@ -1,7 +1,12 @@
+import styles from './page.module.css';
+
 export default function ThoughtsPage() {
+    
     return (
         <div>
-            <h1>Thoughts</h1>
+            <h2 className={styles.title}>Thoughts</h2>
         </div>
     )
 }
+
+  

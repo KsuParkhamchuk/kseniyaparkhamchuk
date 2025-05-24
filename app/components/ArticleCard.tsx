@@ -9,9 +9,13 @@ interface ArticleCardProps {
     description: string;
     id: string;
     parts?: { number: number; title: string }[];
+    createdAt?: Date;
 }
 
-const ArticleCard: React.FC<ArticleCardProps> = ({ title, imagePath, description, id, parts }) => {
+
+
+const ArticleCard: React.FC<ArticleCardProps> = ({ title, imagePath, description, id, parts, createdAt }) => {
+    const dateObj = createdAt ? new Date(createdAt) : null;
     return (
         <Link href={`/notebook/${id}`} className={styles.articleCard}>
             <div className={styles.articleImageContainer}>
@@ -24,23 +28,22 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ title, imagePath, description
                 />
             </div>
             <div className={styles.articleContent}>
-                <h2 className={styles.articleTitle}>{title}</h2>
-                <p className={styles.articleDescription}>{description}</p>
-                
-                {parts && parts.length > 0 && (
-                    <ul className={styles.partsList}>
-                        {parts.map((part) => (
-                            <li key={part.number} className={styles.partItem}>
-                                • Part {part.number}. {part.title}
-                            </li>
-                        ))}
-                    </ul>
-                )}
-                
-                <div className={styles.readMoreContainer}>
-                    <Link href={`/notebook/${id}`} className={styles.readMoreLink}>
-                        Keep reading...
-                    </Link>
+                <div>
+                    <h2 className={styles.articleTitle}>{title}</h2>
+                    <p className={styles.articleDescription}>{description}</p>
+                    
+                    {parts && parts.length > 0 && (
+                        <ul className={styles.partsList}>
+                            {parts.map((part) => (
+                                <li key={part.number} className={styles.partItem}>
+                                    • Part {part.number}. {part.title}
+                                </li>
+                            ))}
+                        </ul>
+                    )}
+                </div>
+                <div className={styles.createdAtContainer}>
+                    <p>{dateObj?.toLocaleString('default', {month: 'long'})} {dateObj?.getFullYear()}</p>
                 </div>
             </div>
         </Link>
