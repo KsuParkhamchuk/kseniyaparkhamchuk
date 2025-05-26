@@ -41,7 +41,7 @@ export default function WhoAmIPage() {
                 </div>
                     
                 </div>
-                <Link href="/resume.pdf" className="resume-button profile-resume-btn" target="_blank" rel="noopener noreferrer">
+                <Link href="/assets/Kseniya_Parkhamchuk_CV.pdf" className="resume-button profile-resume-btn" target="_blank" rel="noopener noreferrer">
                         Resume
                 </Link>
                 

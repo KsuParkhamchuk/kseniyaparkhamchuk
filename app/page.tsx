@@ -47,7 +47,7 @@ export default function HomePage() {
           </Link>
         </div>
 
-        <a href="/resume.pdf" className="resume-button" target="_blank" rel="noopener noreferrer">Resume</a>
+        <a href="/assets/Kseniya_Parkhamchuk_CV.pdf" className="resume-button" target="_blank" rel="noopener noreferrer">Resume</a>
       </main>
   );
 }
