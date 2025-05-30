@@ -7,6 +7,23 @@ import styles from "./page.module.css"
 import Link from "next/link";
 import { Part } from "../types";
 import { useNote } from "@/app/context/noteContext";
+import Image from "next/image";
+
+const ImageComponent = ({ src, alt }: { src?: string; alt?: string }) => {
+    if (!src) {
+        return null;
+    }
+
+    return (
+      <Image
+        fill
+        src={src}
+        alt={alt || ''} 
+        loading="lazy"
+        style={{ maxWidth: '100%', height: 'auto' }} 
+      />
+    );
+  };
 
 export default function NotebookPage() {
     const paramsData = useParams();
@@ -22,7 +39,7 @@ export default function NotebookPage() {
         <div>
             <h1 className={styles.title}>{currentNote?.title}</h1>
             <div className={styles.content}>
-                <ReactMarkdown>{currentNote?.content}</ReactMarkdown>
+                <ReactMarkdown components={{ img: ImageComponent }}>{currentNote?.content}</ReactMarkdown>
             </div>
             {currentNote?.parts && (
                 <div className={styles.parts}>
