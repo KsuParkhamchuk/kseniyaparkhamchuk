@@ -12,8 +12,6 @@ interface ArticleCardProps {
     createdAt?: Date;
 }
 
-
-
 const ArticleCard: React.FC<ArticleCardProps> = ({ title, imagePath, description, id, parts, createdAt }) => {
     const dateObj = createdAt ? new Date(createdAt) : null;
     return (

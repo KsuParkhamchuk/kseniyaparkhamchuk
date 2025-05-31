@@ -1,5 +1,6 @@
 .container {
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -96,6 +97,10 @@
     border-bottom: 2px solid #5EEDF5;
 }
 
+.content :global(table td:last-child:has(.image-container)) {
+    width: 350px;
+}
+
 .content :global(table td) {
     vertical-align: middle;
     padding: 0.75rem;
@@ -104,13 +109,6 @@
 
 .content :global(table tr:hover) {
     background-color: #f7fafc;
-}
-
-.content :global(img) {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 2rem auto;
 }
 
 .content :global(.circled-number) {
@@ -145,3 +143,15 @@
 .next {
    text-align: right;
 }
+
+.content :global(table .image-container) {
+    width: 100%;
+    margin: 2rem auto;
+}
+
+.content :global(.image-container) {
+    width: 80%;
+    max-width: 600px;
+    margin: 2rem auto;
+}
+

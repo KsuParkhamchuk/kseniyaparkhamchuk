@@ -7,23 +7,8 @@ import styles from "./page.module.css"
 import Link from "next/link";
 import { Part } from "../types";
 import { useNote } from "@/app/context/noteContext";
-import Image from "next/image";
+import { ImageComponent } from "../../components/ImageComponent";
 
-const ImageComponent = ({ src, alt }: { src?: string; alt?: string }) => {
-    if (!src) {
-        return null;
-    }
-
-    return (
-      <Image
-        fill
-        src={src}
-        alt={alt || ''} 
-        loading="lazy"
-        style={{ maxWidth: '100%', height: 'auto' }} 
-      />
-    );
-  };
 
 export default function NotebookPage() {
     const paramsData = useParams();

@@ -125,13 +125,6 @@
     background-color: #f7fafc;
 }
 
-.content :global(img) {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 2rem auto;
-}
-
 .content :global(.circled-number) {
     display: inline-flex;
     align-items: center;
@@ -144,4 +137,10 @@
     font-weight: bold;
     margin-right: 0.5em;
     font-size: 0.9em;
+}
+
+.content :global(.image-container) {
+    width: 80%;
+    max-width: 600px;
+    margin: 2rem auto;
 }

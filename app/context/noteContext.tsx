@@ -1,6 +1,6 @@
 'use client'
 
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useCallback } from "react";
 import { Note } from "../notebook/types";
 
 interface NoteContextType {
@@ -17,7 +17,7 @@ export function NoteProvider({ children }: { children: React.ReactNode }) {
     const [currentNote, setCurrentNote] = useState<Note | null>(null);
     const [noteList, setNoteList] = useState<Note[]>([]);
 
-    const getNote = async (id: string) => {
+    const getNote = useCallback(async (id: string) => {
         try {
             const res = await fetch(`/api/notebook/${id}`);
             const data = await res.json();
@@ -25,7 +25,7 @@ export function NoteProvider({ children }: { children: React.ReactNode }) {
         } catch (error) {
             console.error(error);
         }
-    }
+    }, [setCurrentNote]);
 
     return (
         <NoteContext.Provider value={{ currentNote, setCurrentNote, getNote, noteList, setNoteList }}>
