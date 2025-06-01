@@ -13,7 +13,6 @@
 .articleImage {
     width: 100%;
     height: auto;
-    border: 1px solid #bbb;
 }
 
 .articleContent {
@@ -51,7 +50,7 @@
 
 .createdAtContainer {
     padding: 0.5rem 1rem;
-    background-color: #FFF2E3;
+    font-weight: 700;
     color: #333;
     width: fit-content;
     min-width: 120px;
@@ -78,5 +77,11 @@
     .articleContent {
         margin-left: 0;
         margin-top: 2rem;
+        flex-direction: column;
+    }
+
+    .articleImage {
+        object-fit: contain;
+        max-height: inherit;
     }
 } 
