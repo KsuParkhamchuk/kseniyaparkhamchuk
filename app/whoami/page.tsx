@@ -40,7 +40,6 @@ export default function WhoAmIPage() {
                         </p>
                 </div>
                     
-                </div>
                 <Link href="/assets/Kseniya_Parkhamchuk_CV.pdf" className="resume-button profile-resume-btn" target="_blank" rel="noopener noreferrer">
                         Resume
                 </Link>
@@ -54,16 +53,17 @@ export default function WhoAmIPage() {
                     description="with custom layers implementation"
                     githubUrl="https://github.com/KsuParkhamchuk/gpt-2"
                 />
+                 <ProjectCard 
+                    title="vLLM chat comparison"
+                    description="launching several vllm servers with several models on several GPUs"
+                    githubUrl="https://github.com/KsuParkhamchuk/vllm-mm-chat-comparison"
+                />
                 <ProjectCard 
                     title="Gemma3-sft"
                     description="in attempts of building custom dataset"
                     githubUrl="https://github.com/KsuParkhamchuk/gemma3-sft"
                 />
-                <ProjectCard 
-                    title="Vibe-maps"
-                    description="check what models are capable of"
-                    githubUrl="https://github.com/KsuParkhamchuk/vibe-maps"
-                />
+               
             </div>
         </main>
     );
