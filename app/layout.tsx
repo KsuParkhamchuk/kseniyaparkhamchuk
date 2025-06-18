@@ -27,7 +27,7 @@ export default function RootLayout({
           <Link href="/" className="header-name">Kseniya Parkhamchuk</Link>
           <div className="header-contact">
               <div className="social-links">
-                <a href="https://x.com/KsenaParhamchuk" target="_blank" rel="noopener noreferrer">
+                <a href="https://x.com/xena_pk" target="_blank" rel="noopener noreferrer">
                   <Image src="/icons/x.svg" alt="X Profile" width={24} height={24} />
                 </a>
                 <a href="https://github.com/KsuParkhamchuk" target="_blank" rel="noopener noreferrer">

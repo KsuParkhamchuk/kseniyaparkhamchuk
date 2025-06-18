@@ -38,8 +38,8 @@ export default function WhoAmIPage() {
                         <p className="bio-text">
                             I’m not great at describing myself, so it’s best to check out what I’ve worked on instead:
                         </p>
-                </div>
-                    
+                    </div>
+                </div>    
                 <Link href="/assets/Kseniya_Parkhamchuk_CV.pdf" className="resume-button profile-resume-btn" target="_blank" rel="noopener noreferrer">
                         Resume
                 </Link>
