@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from 'react';
-import ArticleCard from '../components/ArticleCard';
+import ArticleCard from '../_components/articleCard/ArticleCard';
 import styles from './page.module.css';
 import { Note } from './types';
 import { useNote } from '../context/noteContext';

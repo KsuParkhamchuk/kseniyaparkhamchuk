@@ -7,7 +7,7 @@ import styles from "./page.module.css"
 import Link from "next/link";
 import { Part } from "../types";
 import { useNote } from "@/app/context/noteContext";
-import { ImageComponent } from "../../components/ImageComponent";
+import { ImageComponent } from "../../_components/image/ImageComponent";
 
 
 export default function NotebookPage() {

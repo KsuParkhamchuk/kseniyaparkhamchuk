@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import "./styles.css";
-import ProjectCard from "../components/ProjectCard";
+import ProjectCard from "../_components/projectCard/ProjectCard";
 
 export default function WhoAmIPage() {
     return (

@@ -1,0 +1,25 @@
+.imageContainer {
+    position: relative;
+    width: 100%;
+}
+
+.zoomedInContainer {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    min-width: 100vw;
+    height: 100vh;
+    margin-top: 0;
+    z-index: 1000;
+    top: -2rem;
+    left: 0;
+}
+
+.zoomedInImg {
+    padding: 25%;
+    top: 0;
+    position: absolute;
+    margin: auto;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}

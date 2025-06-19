@@ -9,7 +9,7 @@ import styles from "./page.module.css";
 import Link from "next/link";
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
-import { ImageComponent } from "../../../components/ImageComponent";
+import { ImageComponent } from "../../../_components/image/ImageComponent";
 
 export default function NotebookPartPage() {
     const {currentNote, getNote} = useNote();
