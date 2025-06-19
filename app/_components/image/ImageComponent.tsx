@@ -17,14 +17,14 @@ export const ImageComponent = ({ src, alt }: { src?: string; alt?: string }) => 
     return (
         <div className={`image-container ${isZoomedIn ? styles.zoomedInContainer : styles.imageContainer}`} onClick={zoom}>
             <Image
-                layout='responsive'
-                width={800}
-                height={450}
-                objectFit='contain'
+            // layout='responsive'
+                priority
+                width={300} 
+                height={0} 
+                sizes="100vw"
                 src={src}
-                alt={alt || ''} 
-                loading="lazy"
-                className={isZoomedIn ? styles.zoomedInImg : ''}
+                alt={alt || ''}
+                className={isZoomedIn ? styles.zoomedInImg : styles.image}
             />
         </div>
     );

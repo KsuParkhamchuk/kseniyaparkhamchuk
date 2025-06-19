@@ -1,6 +1,12 @@
 .imageContainer {
     position: relative;
     width: 100%;
+    cursor: pointer;
+}
+
+.image {
+    width: 100%;
+    height: auto;
 }
 
 .zoomedInContainer {
@@ -22,6 +28,9 @@
     bottom: 0;
     right: 0;
     left: 0;
+    cursor: auto;
+    width: 100%;
+    height: auto;
 
     @media screen and (max-width: 768px){
         padding: 10%;
