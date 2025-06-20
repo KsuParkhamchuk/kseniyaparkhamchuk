@@ -1,4 +1,4 @@
-/* Reset inherited styles */
+
 html,
 body,
 div,
@@ -88,7 +88,6 @@ video {
   vertical-align: baseline;
 }
 
-/* HTML5 display-role reset */
 article,
 aside,
 details,
@@ -155,7 +154,6 @@ body {
     flex-grow: 1;
 }
 
-/* Header Styles */
 header {
     display: flex;
     justify-content: space-between;
@@ -329,7 +327,6 @@ main {
     }
 }
 
-/* Mobile Devices */
 @media (max-width: 600px) {
     body {
         padding: 0.5rem;
@@ -341,6 +338,8 @@ main {
         justify-content: center;
     }
     main {
+        flex-direction: column-reverse;
+        gap: 1rem;
         margin-top: 1rem;
     }
     .button-grid {

@@ -6,6 +6,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
 import { NoteProvider } from "./context/noteContext";
 
+
 export const metadata: Metadata = {
   title: "Kseniya Parkhamchuk",
   description: "Personal website for Kseniya Parkhamchuk",
@@ -37,7 +38,7 @@ export default function RootLayout({
                   <Image src="/icons/linkedin.svg" alt="LinkedIn Profile" width={24} height={24} />
                 </a>
               </div>
-              <div className="email-link">k.parkhamchuk@gmail.com</div>
+              <a href="mailto:k.parkhamchuk@gmail.com" className="email-link">k.parkhamchuk@gmail.com</a>
             </div>
         </header>
         <NoteProvider>
