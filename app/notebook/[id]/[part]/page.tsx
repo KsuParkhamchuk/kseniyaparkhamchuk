@@ -1,32 +1,35 @@
-'use client';
-
-import { useNote } from "@/app/context/noteContext";
-import { useParams } from "next/navigation";
-import { useEffect } from "react";
 import ReactMarkdown from "react-markdown";
-import { Part } from "../../types";
+import { Part, Note } from "../../types";
 import styles from "./page.module.css";
 import Link from "next/link";
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import { ImageComponent } from "../../../_components/image/ImageComponent";
 
-export default function NotebookPartPage() {
-    const {currentNote, getNote} = useNote();
-    const paramsData = useParams();
-    const partNumber = parseInt(paramsData.part as string);
+type Params = {
+    id: string,
+    part: string,
+}
+
+const getNote = async (id: string): Promise<Note | null> => {
+    const url = `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/'}api/notebook/${id}`
+
+    const response = await fetch(url, {next: {revalidate: 3600}});
+
+    if (!response.ok) {
+        throw new Error("Was not able to load the post content")
+    }
+    console.log(id)
+    const data = await response.json();
+    console.log(data)
+    return data[0];
+}
+
+export default async function NotebookPartPage({params}: {params: Params}) {
+    const partNumber = parseInt(params.part as string);
+    const currentNote = await getNote(params.id);
     const part = currentNote?.parts?.find((part: Part) => part.number === partNumber);
     const nextPart = currentNote?.parts?.find((part: Part) => part.number === partNumber + 1);
-
-    useEffect(() => {
-        if (!currentNote) {
-            fetch(`/api/notebook/${paramsData.id}`)
-            .then(res => res.json())
-            .then(data => {
-                getNote(data[0]._id.toString());
-            })
-        }
-    }, [currentNote, paramsData.id, getNote])
     
     return (
         <div className={styles.container}>

@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
-import { NoteProvider } from "./context/noteContext";
 
 
 export const metadata: Metadata = {
@@ -41,9 +40,7 @@ export default function RootLayout({
               <a href="mailto:k.parkhamchuk@gmail.com" className="email-link">k.parkhamchuk@gmail.com</a>
             </div>
         </header>
-        <NoteProvider>
           {children}
-        </NoteProvider>
         </div>
         <SpeedInsights />
         <Analytics />
