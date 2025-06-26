@@ -2,20 +2,10 @@ import React, { Suspense } from 'react';
 import ArticleCard from '../_components/articleCard/ArticleCard';
 import styles from './page.module.css';
 import { Note } from './types';
-
-async function getNoteList(): Promise<Note[]> {
-    const apiUrl = `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/'}api/notebook`;
-    const response = await fetch(apiUrl, { next: { revalidate: 3600 } });
-
-    if (!response.ok) {
-        throw new Error('Failed to fetch notes from the API.');
-    }
-
-    return response.json();
-}
+import { getNotes } from './data';
 
 export default async function NotebookPage() {
-    const noteList = await getNoteList();
+    const noteList = await getNotes();
 
     return (
         <div className={styles.notebookContainer}>
@@ -26,9 +16,9 @@ export default async function NotebookPage() {
                 <div className={styles.articlesContainer}>
                     {noteList && noteList.length > 0 ? (
                         noteList.reverse().map((note: Note) => (
-                            <React.Fragment key={note._id.toString()}>
+                            <React.Fragment key={note._id}>
                                 <ArticleCard 
-                                    id={note._id.toString()}
+                                    id={note._id}
                                     title={note.title}
                                     imagePath={note.imagePath}
                                     description={note.description}

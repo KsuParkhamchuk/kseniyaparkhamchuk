@@ -1,30 +1,20 @@
 import ReactMarkdown from "react-markdown";
 import styles from "./page.module.css"
 import Link from "next/link";
-import { Part, Note } from "../types";
+import { Part } from "../types";
 import { ImageComponent } from "../../_components/image/ImageComponent";
 import { Suspense } from "react";
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
+import { getNoteById } from "../data";
 
-const getNote = async (id: string): Promise<Note | null> => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/'}api/notebook/${id}`
-
-    const response = await fetch(url, {next: {revalidate: 3600}});
-
-    if (!response.ok) {
-        throw new Error("Was not able to load the post content")
-    }
-    console.log(id)
-    const data = await response.json();
-    console.log(data)
-    return data[0];
-
+interface NotebookPageProps {
+    params: Promise<{ id: string }>;
 }
 
-export default async function NotebookPage({ params }: { params: Promise<{ id: string }> }) {
-    const { id } = await params;
-    const currentNote = await getNote(id);
+export default async function NotebookPage({ params }: NotebookPageProps) {
+    const { id } = await params
+    const currentNote = await getNoteById(id);
     
     return (
         <Suspense fallback="Loading...">

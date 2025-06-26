@@ -9,7 +9,7 @@ interface ArticleCardProps {
     description: string;
     id: string;
     parts?: { number: number; title: string }[];
-    createdAt?: Date;
+    createdAt?: string;
 }
 
 const ArticleCard: React.FC<ArticleCardProps> = ({ title, imagePath, description, id, parts, createdAt }) => {

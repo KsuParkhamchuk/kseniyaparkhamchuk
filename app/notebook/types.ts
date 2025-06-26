@@ -1,5 +1,3 @@
-import { ObjectId } from "mongodb";
-
 export type Part = {
     number: number;
     title: string;
@@ -7,11 +5,11 @@ export type Part = {
 }
 
 export type Note = {
-    _id: ObjectId;
+    _id: string;
     title: string;
     imagePath: string;
     description: string;
     parts?: Part[];
     content?: string;
-    createdAt?: Date;
+    createdAt?: string;
 }
