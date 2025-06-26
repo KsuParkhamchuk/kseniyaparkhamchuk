@@ -37,7 +37,8 @@
     background-color: #ffffff;
     border-radius: 0.75rem;
     padding: 1.5rem;
-    box-shadow: 0 3px 8px 4px #0000001a, 0 2px 4px -1px #0000000f;
+    box-shadow: 0 4px 12px #0000000a;
+    border: 1px solid #eaeaea
 }
 
 .stepCardLarge {

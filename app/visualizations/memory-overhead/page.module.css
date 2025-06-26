@@ -1,0 +1,164 @@
+.container {
+    font-family: 'Thabit', monospace;
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1rem;
+    color: #333;
+}
+
+.title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 2.5rem;
+    color: #212529;
+}
+
+.controls, .chartContainer, .tableContainer, .insights {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2.5rem;
+    border: 1px solid #eaeaea;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+.sliderContainer {
+    margin-bottom: 2rem;
+}
+.sliderContainer:last-child {
+    margin-bottom: 0;
+}
+.sliderContainer label {
+    display: block;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    color: #495057;
+    font-size: 0.95rem;
+}
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background: #e9ecef;
+    outline: none;
+    cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #e0e7ff;
+    border: 3px solid #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.slider.sliderGreen::-webkit-slider-thumb {
+    background: #edc9f9;
+}
+
+.sliderLabels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #868e96;
+    margin-top: 0.75rem;
+}
+
+.axisLabel, .axisTitle {
+    font-size: 13px;
+    fill: #868e96;
+    font-family: 'Thabit', monospace;
+}
+.axisTitle {
+    font-weight: 500;
+}
+
+.barBlue { fill: #c9d5ff; }
+.barRed { fill: #f9cccc; }
+
+.chartLegend {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+}
+.legendColorBox {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 8px;
+    vertical-align: middle;
+    border-radius: 3px;
+}
+
+.legendBlue {
+    background-color: #c9d5ff;
+}
+
+.legendRed {
+    background-color: #f9cccc;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-variant-numeric: tabular-nums;
+}
+.table th, .table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #f1f3f5;
+}
+.table th {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #495057;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.table td {
+    font-size: 0.95rem;
+}
+.table tbody tr:last-child td {
+    border-bottom: none;
+}
+.highlightCell {
+    color: #ff6767;
+    font-weight: 500;
+}
+.overheadBadge {
+    background-color: #fdeaea;
+    color: #ff6767;
+    padding: 0.25rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.insights {
+    background-color: transparent;
+    border: 1px solid #eaeaea;
+    padding: 2rem;
+}
+.insights h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+.insights ul {
+    padding-left: 1.5rem;
+    margin: 0;
+}
+.insights li {
+    margin-bottom: 0.5rem;
+    color: #495057;
+    line-height: 1.6;
+}
