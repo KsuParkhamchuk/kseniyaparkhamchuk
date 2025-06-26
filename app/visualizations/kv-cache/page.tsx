@@ -186,17 +186,18 @@ const KVCacheVisualizationPage: React.FC = () => {
             <div className={`${styles.contentArea} ${styles.justifyCenter}`}>{renderKVProcessing()}</div>
           </div>
           <div className={styles.containerBox}>
-            <h2 className={styles.sectionTitle}>4. KV Cache (Stored Past K/V Pairs)</h2>
-            <p className={styles.descriptionText}>Stores K/V pairs from past tokens to be reused.</p>
-            <div className={styles.kvCacheContentArea}>{renderCacheContent()}</div>
-          </div>
-        </div>
-
-        <div className={styles.gridColumn}>
-          <div className={styles.containerBox}>
             <h2 className={styles.sectionTitle}>3. Attention Calculation (Using Cache)</h2>
             <p className={styles.attentionStatusText}>{attentionStatus}</p>
             <div className={styles.attentionCalcContentArea}>{renderAttentionInputs()}</div>
+          </div>
+          
+        </div>
+
+        <div className={styles.gridColumn}>
+        <div className={styles.containerBox}>
+            <h2 className={styles.sectionTitle}>4. KV Cache (Stored Past K/V Pairs)</h2>
+            <p className={styles.descriptionText}>Stores K/V pairs from past tokens to be reused.</p>
+            <div className={styles.kvCacheContentArea}>{renderCacheContent()}</div>
           </div>
           <div className={styles.containerBox}>
             <h2 className={styles.sectionTitle}>Explanation</h2>

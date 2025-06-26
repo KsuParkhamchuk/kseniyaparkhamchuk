@@ -1,0 +1,282 @@
+body {
+  background-color: #F9FAFB;
+  color: #1F2937;
+}
+
+.container {
+  max-width: 80rem; /* max-w-5xl */
+  margin: 0 auto;
+  padding: 2rem; /* p-8 */
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem; /* mb-12 */
+}
+
+.header h1 {
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: 700; /* font-bold */
+  letter-spacing: -0.025em; /* tracking-tight */
+  color: #111827; /* text-gray-900 */
+}
+
+.header p {
+  margin-top: 1rem; /* mt-4 */
+  font-size: 1.125rem; /* text-lg */
+  color: #4B5563; /* text-gray-600 */
+}
+
+.mainContent {
+  background-color: white;
+  padding: 1.5rem; /* p-6 */
+  border-radius: 0.75rem; /* rounded-xl */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+  margin-bottom: 2rem; /* mb-8 */
+}
+
+.infoBar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem; /* gap-4 */
+  margin-bottom: 1.5rem; /* mb-6 */
+  font-size: 0.875rem; /* text-sm */
+  color: #4B5563; /* text-gray-600 */
+}
+
+.infoLabel {
+  font-weight: 600; /* font-semibold */
+  color: #1F2937; /* text-gray-800 */
+}
+
+.infoValue {
+  font-family: monospace;
+  background-color: #F3F4F6; /* bg-gray-100 */
+  padding: 0.25rem 0.5rem; /* px-2 py-1 */
+  border-radius: 0.25rem; /* rounded */
+}
+
+.decoderInputSection {
+  margin-bottom: 1rem; /* mb-4 */
+}
+
+.sectionTitle {
+  font-weight: 600; /* font-semibold */
+  color: #1F2937; /* text-gray-800 */
+  margin-bottom: 0.5rem; /* mb-2 */
+}
+
+.decoderInputContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem; /* gap-2 */
+  padding: 1rem; /* p-4 */
+  background-color: #F9FAFB; /* bg-gray-50 */
+  border-radius: 0.5rem; /* rounded-lg */
+  min-height: 70px;
+}
+
+.controls {
+  text-align: center;
+  margin-top: 2rem; /* mt-8 */
+}
+
+.button {
+  transition: all 0.2s ease-in-out;
+  border-radius: 0.5rem; 
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  border: 2px solid #000;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.resetButton {
+  margin-left: 0.5rem;
+}
+
+.visualizationGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) { /* lg: */
+  .visualizationGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.visualizationSection {
+  background-color: white;
+  border-radius: 0.75rem; /* rounded-xl */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+  padding: 1.5rem; /* p-6 */
+}
+
+.sectionHeader {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 600; /* font-semibold */
+  color: #1F2937; /* text-gray-800 */
+  margin-bottom: 0.5rem; /* mb-2 */
+}
+
+.sectionDescription {
+  color: #4B5563; /* text-gray-600 */
+  margin-bottom: 1rem; /* mb-4 */
+  font-size: 0.875rem; /* text-sm */
+}
+
+.strong {
+  color: #4338CA; /* text-indigo-600 */
+}
+
+.attentionVizContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem; /* gap-2 */
+  padding: 1rem; /* p-4 */
+  background-color: #F9FAFB; /* bg-gray-50 */
+  border-radius: 0.5rem; /* rounded-lg */
+  min-height: 80px;
+  align-items: center;
+  justify-content: center;
+}
+
+.tokenBox {
+  min-width: 60px;
+  transition: all 0.3s ease-in-out;
+  font-weight: 500;
+  border: 2px solid;
+  padding: 0.75rem; /* p-3 */
+  border-radius: 0.5rem; /* rounded-lg */
+  text-align: center;
+  font-size: 0.875rem; /* text-sm */
+  position: relative;
+  flex-shrink: 0;
+}
+
+.inputToken {
+  background-color: #F3F4F6; /* bg-gray-100 */
+  border-color: #D1D5DB; /* border-gray-300 */
+}
+
+.attentionAllowed {
+  border-color: #A7F3D0; /* Emerald-200 */
+  background-color: #D1FAE5; /* Emerald-100 */
+  color: #065F46; /* Emerald-800 */
+}
+
+.currentQuery {
+  border-color: #A5B4FC; /* Indigo-300 */
+  background-color: #EEF2FF; /* Indigo-50 */
+  color: #3730A3; /* Indigo-800 */
+  font-weight: 700;
+  box-shadow: 0 0 0 3px rgba(165, 180, 252, 0.5);
+}
+
+.arrow {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 15px;
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
+  background-color: #818CF8; /* Indigo-400 */
+}
+
+.legendInfoBox {
+  background-color: #F3F4F6; /* Gray-100 */
+  border-left: 4px solid #C7D2FE; /* Indigo-200 */
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 0.5rem; /* rounded-lg */
+  font-size: 0.875rem; /* text-sm */
+}
+
+.legendInfoBox p + p {
+  margin-top: 0.5rem;
+}
+
+.strongIndigo {
+  color: #4338CA; /* text-indigo-600 */
+}
+
+.strongEmerald {
+  color: #047857; /* text-emerald-600 */
+}
+
+.matrixVizContainer {
+  overflow-x: auto;
+}
+
+.matrixTable {
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  width: 100%;
+}
+
+.matrixTable th, .matrixTable td {
+  border: 1px solid #E5E7EB; /* Gray-200 */
+  padding: 0.5rem;
+  text-align: center;
+  min-width: 50px;
+}
+
+.matrixTable th {
+  background-color: #F9FAFB; /* Gray-50 */
+  font-weight: 600;
+}
+
+.matrixAllowed {
+  background-color: #ECFDF5; /* Emerald-50 */
+  color: #047857; /* Emerald-700 */
+}
+
+.matrixMasked {
+  background-color: #FEF2F2; /* Red-50 */
+  color: #B91C1C; /* Red-700 */
+  opacity: 0.7;
+}
+
+.queryRow th, .queryRow td {
+  background-color: #E0E7FF !important; /* Indigo-100 */
+  font-weight: bold;
+}
+
+.headerCell {
+  background-color: #F3F4F6; /* Gray-100 */
+  font-style: italic;
+  color: #4B5563;
+}
+
+.generatedSequenceContainer {
+  margin-top: 2rem; /* mt-8 */
+  padding: 1rem; /* p-4 */
+  background-color: #F0FDF4; /* bg-emerald-50 */
+  border-left: 4px solid #6EE7B7; /* border-emerald-400 */
+  border-radius: 0 0.5rem 0.5rem 0; /* rounded-r-lg */
+}
+
+.generatedSequenceLabel {
+  font-weight: 600; /* font-semibold */
+  color: #065F46; /* text-emerald-800 */
+  font-size: 1.125rem; /* text-lg */
+}
+
+.generatedSequenceText {
+  margin-left: 0.75rem; /* ml-3 */
+  color: #064E3B; /* text-emerald-900 */
+  font-family: monospace;
+  font-size: 1.125rem; /* text-lg */
+}
+
