@@ -1,18 +1,20 @@
 import { Suspense } from 'react';
 import styles from './page.module.css';
-import { Thought } from './types'
+import { Thought as ThoughtType } from './types'
+import dbConnect from '@/db/connect';
+import Thought from '@/db/thoughts';
 
 
-const getThoughts = async (): Promise<Thought[]> => {
-    const url = `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/'}api/thoughts`
+const getThoughts = async (): Promise<ThoughtType[]> => {
+    await dbConnect()
 
-    const response = await fetch(url, {next: {revalidate: 3600}})
-
-    if (!response.ok) {
-        throw new Error("Failed to fetch thoughts from the API")
+     try {
+        const thoughts = await Thought.find().lean();
+        return JSON.parse(JSON.stringify(thoughts)) as ThoughtType[];
+    } catch(error){
+        console.log(error);
+        return [];
     }
-
-    return response.json()
 }
 
 export default async function ThoughtsPage() {
@@ -22,7 +24,7 @@ export default async function ThoughtsPage() {
         <div>
             <h2 className={styles.title}>Thoughts</h2>
             <Suspense fallback="Loading">
-                {thoughts.map((thought: Thought) => {
+                {thoughts.map((thought: ThoughtType) => {
                     return <div key={thought._id.toString()}>
                         <h2>{thought.title}</h2>
                         <p>{thought.description}</p>
