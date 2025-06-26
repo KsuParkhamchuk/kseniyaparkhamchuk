@@ -34,7 +34,7 @@
 .projectLinks {
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    justify-content: end;
     font-size: 0.8em;
     position: absolute;
     bottom: 1.5rem;
