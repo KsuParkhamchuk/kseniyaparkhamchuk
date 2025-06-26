@@ -10,13 +10,13 @@ import { getNoteById } from "../data";
 import type { Metadata } from 'next'
 
 interface NotebookPageProps {
-    params: { id: string };
+    params: Promise<{ id: string }>;
 }
 
 export async function generateMetadata(
   { params }: NotebookPageProps,
 ): Promise<Metadata> {
-  const id = params.id
+  const { id } = await params
   const note = await getNoteById(id)
 
   if (!note) {
@@ -59,7 +59,7 @@ export async function generateMetadata(
 }
 
 export default async function NotebookPage({ params }: NotebookPageProps) {
-    const { id } = params
+    const { id } = await params
     const currentNote = await getNoteById(id);
     
     if (!currentNote) {

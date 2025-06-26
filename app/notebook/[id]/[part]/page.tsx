@@ -9,13 +9,13 @@ import { getNoteById } from "../../data";
 import type { Metadata } from 'next';
 
 interface NotebookPartPageProps {
-    params: { id: string; part: string };
+    params: Promise<{ id: string; part: string }>;
 }
 
 export async function generateMetadata(
   { params }: NotebookPartPageProps,
 ): Promise<Metadata> {
-  const { id, part } = params;
+  const { id, part } = await params;
   const note = await getNoteById(id);
   const partNumber = parseInt(part, 10);
   const partObj = note?.parts?.find((p: Part) => p.number === partNumber);
@@ -53,7 +53,7 @@ export async function generateMetadata(
 }
 
 export default async function NotebookPartPage({ params }: NotebookPartPageProps) {
-    const { part, id } = params;
+    const { part, id } = await params;
     const partNumber = parseInt(part, 10);
     const currentNote = await getNoteById(id);
     
