@@ -4,10 +4,8 @@ import Link from "next/link";
 import { Part, Note } from "../types";
 import { ImageComponent } from "../../_components/image/ImageComponent";
 import { Suspense } from "react";
-
-type Params = {
-    id: string
-}
+import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
 
 const getNote = async (id: string): Promise<Note | null> => {
     const url = `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/'}api/notebook/${id}`
@@ -24,16 +22,16 @@ const getNote = async (id: string): Promise<Note | null> => {
 
 }
 
-export default async function NotebookPage({params}: {params: Params}) {
-    console.log(params)
-    const currentNote = await getNote(params.id);
+export default async function NotebookPage({ params }: { params: Promise<{ id: string }> }) {
+    const { id } = await params;
+    const currentNote = await getNote(id);
     
     return (
         <Suspense fallback="Loading...">
             <div>
                 <h1 className={styles.title}>{currentNote?.title}</h1>
                 <div className={styles.content}>
-                    <ReactMarkdown components={{ img: ImageComponent }}>{currentNote?.content}</ReactMarkdown>
+                    <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} components={{ img: ImageComponent }}>{currentNote?.content}</ReactMarkdown>
                 </div>
                 {currentNote?.parts && (
                     <div className={styles.parts}>

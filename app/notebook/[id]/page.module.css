@@ -33,6 +33,12 @@
     margin-bottom: 2rem;
 }
 
+.content :global(h2) {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
 .content :global(p) {
     margin-bottom: 2rem;
     text-align: justify;
@@ -51,13 +57,13 @@
 
 .content :global(ul) {
     margin-bottom: 2rem;
-    padding-left: 1.5rem;
+    padding-left: 4.5rem;
     list-style-type: disc;
 }
 
 .content :global(ol) {
     margin-bottom: 2rem;
-    padding-left: 1.5rem;
+    padding-left: 4.5rem;
     list-style-type: decimal;
 }
 

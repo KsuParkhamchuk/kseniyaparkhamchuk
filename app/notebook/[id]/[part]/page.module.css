@@ -1,5 +1,5 @@
 .container {
-    max-width: 1200px;
+    max-width: 1000px;
     width: 100%;
     margin: 0 auto;
 }
@@ -32,13 +32,13 @@
 
 .content :global(ul) {
     margin-bottom: 2rem;
-    padding-left: 1.5rem;
+    padding-left: 4.5rem;
     list-style-type: disc;
 }
 
 .content :global(ol) {
     margin-bottom: 2rem;
-    padding-left: 1.5rem;
+    padding-left: 4.5rem;
     list-style-type: decimal;
 }
 
@@ -86,7 +86,7 @@
     border-collapse: collapse;
     overflow-x: auto;
     display: block;
-    max-width: 1200px;
+    max-width: 1000px;
 }
 
 .content :global(table th) {
