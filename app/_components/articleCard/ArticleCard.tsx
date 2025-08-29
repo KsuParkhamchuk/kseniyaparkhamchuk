@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./ArticleCard.module.css";
-import { fetchObj } from "@/app/r2/config";
+import { getImgSrc } from "@/app/r2/config";
 
 interface ArticleCardProps {
   title: string;
@@ -24,22 +24,13 @@ const ArticleCard: React.FC<ArticleCardProps> = async ({
   createdAt,
 }) => {
   const dateObj = createdAt ? new Date(createdAt) : null;
-  let imageSrc = "";
-
-  const imgObj = await fetchObj(imagePath);
-
-  if (imgObj.Body) {
-    const buffer = imgObj.Body as Buffer;
-    const base64 = buffer.toString("base64");
-    const mimeType = imgObj.ContentType || "image/jpeg";
-    imageSrc = `data:${mimeType};base64,${base64}`;
-  }
+  const imageSrc = await getImgSrc(imagePath);
 
   return (
     <Link href={`${prefix}/${id}`} className={styles.articleCard} prefetch>
       <div className={styles.articleImageContainer}>
         <Image
-          src={imageSrc}
+          src={imageSrc || ""}
           alt={`Image for ${title}`}
           width={400}
           height={300}

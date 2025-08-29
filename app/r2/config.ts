@@ -13,6 +13,21 @@ const s3 = new S3({
   region: "auto",
 });
 
+export const getImgSrc = async (objKey: string): Promise<string> => {
+  const imgObj = await fetchObj(objKey);
+
+  if (!imgObj.Body) {
+    return "";
+  }
+
+  const buffer = imgObj.Body as Buffer;
+  const base64 = buffer.toString("base64");
+  const mimeType = imgObj.ContentType || "image/jpeg";
+  const imageSrc = `data:${mimeType};base64,${base64}`;
+
+  return imageSrc;
+};
+
 export const fetchObj = async (objKey: string) => {
   const params = {
     Bucket: BUCKET_NAME,

@@ -1,33 +1,59 @@
-'use client'
+"use client";
 
-import Image from 'next/image';
-import styles from './ImageComponent.module.css';
-import { useState } from 'react';
+import Image from "next/image";
+import styles from "./ImageComponent.module.css";
+import { useEffect, useState } from "react";
 
-export const ImageComponent = ({ src, alt }: { src?: string; alt?: string }) => {
+export const ImageComponent = ({
+  src,
+  alt,
+}: {
+  src?: string;
+  alt?: string;
+}) => {
+  const [isZoomedIn, setIsZoomedIn] = useState<boolean>(false);
+  const [imgSrc, setSrc] = useState<string>("");
 
-    const [isZoomedIn, setIsZoomedIn] = useState<boolean>(false)
-    
-    if (!src) {
+  useEffect(() => {
+    async function getimgObj() {
+      if (!src) {
         return null;
+      }
+
+      const response = await fetch(
+        `/api/get-signed-url?srcKey=${encodeURIComponent(src)}`
+      );
+      const data = await response.json();
+      setSrc(data.url);
     }
 
-    const zoom = () => {
-        setIsZoomedIn(prev => !prev)
-    }
+    getimgObj();
+  }, [src]);
 
-    return (
-        <div className={`image-container ${isZoomedIn ? styles.zoomedInContainer : styles.imageContainer}`} onClick={zoom}>
-            <Image
-            // layout='responsive'
-                priority
-                width={300} 
-                height={0} 
-                sizes="100vw"
-                src={src}
-                alt={alt || ''}
-                className={isZoomedIn ? styles.zoomedInImg : styles.image}
-            />
-        </div>
-    );
+  const zoom = () => {
+    setIsZoomedIn((prev) => !prev);
+  };
+
+  return (
+    <div
+      className={`image-container ${
+        isZoomedIn ? styles.zoomedInContainer : styles.imageContainer
+      }`}
+      onClick={zoom}
+    >
+      {imgSrc ? (
+        <Image
+          priority
+          width={300}
+          height={0}
+          sizes="100vw"
+          src={imgSrc}
+          alt={alt || ""}
+          className={isZoomedIn ? styles.zoomedInImg : styles.image}
+        />
+      ) : (
+        "Image loading is in progress..."
+      )}
+    </div>
+  );
 };
