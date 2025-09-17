@@ -85,6 +85,10 @@
     margin-bottom: 2rem;
 }
 
+.chat-button.whoami-location {
+    margin: 2rem 0;
+}
+
 /* Responsive styles */
 @media (max-width: 900px) {
     .projects-grid {

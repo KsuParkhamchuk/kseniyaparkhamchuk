@@ -30,23 +30,23 @@ export default function WhoAmIPage() {
           </p>
 
           <p className="bio-text">
-            I’m a <strong>senior software engineer</strong> who started out building web
-            applications. I still build them, but now my preferences are in
-            solving interesting technical challenges alongside people who get
-            equally excited about them. Recently I discovered that{" "}
-            <strong>AI is super exciting</strong> in both ways: as a separate
-            direction for development and in integration with excisting
-            solutions. So now I am exploring each and every detail in NLP and
-            LLMs. I am focusing a lot on understanding the details and thinking about
-            how we can apply it for the better.
+            I’m a <strong>senior software engineer</strong> who started out
+            building web applications. I still build them, but now my
+            preferences are in solving interesting technical challenges
+            alongside people who get equally excited about them. Recently I
+            discovered that <strong>AI is super exciting</strong> in both ways:
+            as a separate direction for development and in integration with
+            excisting solutions. So now I am exploring each and every detail in
+            NLP and LLMs. I am focusing a lot on understanding the details and
+            thinking about how we can apply it for the better.
           </p>
           <p>
             I am making some notes about my findings in my{" "}
             <Link href="/notebook" className="notebook-btn">
               Blog
             </Link>
-            . I am always open to talking and exchanging ideas, feel free to talk to
-            me on{" "}
+            . I am always open to talking and exchanging ideas, feel free to
+            talk to me on{" "}
             <Link
               href="https://x.com/xena_pk"
               target="_blank"
@@ -55,19 +55,26 @@ export default function WhoAmIPage() {
               X
             </Link>
           </p>
-          <p></p>
-          <p className="bio-text">My latest work is below:</p>
+          <div className="action-buttons">
+            <Link
+              href="/assets/Kseniya_Parkhamchuk_CV.pdf"
+              className="resume-button profile-resume-btn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Resume
+            </Link>
+            <a
+              href="https://calendly.com/k-parkhamchuk/new-meeting"
+              className="chat-button profile-chat-btn whoami-location"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Chat
+            </a>
+          </div>
         </div>
       </div>
-      <Link
-        href="/assets/Kseniya_Parkhamchuk_CV.pdf"
-        className="resume-button profile-resume-btn"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Resume
-      </Link>
-
       <h2 className="section-title">Latest projects</h2>
 
       <div className="projects-grid">
